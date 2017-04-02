@@ -1,6 +1,6 @@
 <?php
 
-namespace Ingresse\Accountkit;
+namespace Unisharp\Accountkit;
 
 use OutOfBoundsException;
 

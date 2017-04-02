@@ -1,9 +1,9 @@
 <?php
 
-namespace Ingresse\Accountkit\Tests;
+namespace Unisharp\Accountkit\Tests;
 
-use Ingresse\Accountkit\Client;
-use Ingresse\Accountkit\Config;
+use Unisharp\Accountkit\Client;
+use Unisharp\Accountkit\Config;
 use GuzzleHttp\Psr7\Response;
 use PHPUnit_Framework_TestCase;
 
@@ -27,7 +27,7 @@ class ClientTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Ingresse\Accountkit\Client
+     * @covers Unisharp\Accountkit\Client
      */
     public function testValidateTokenWithSuccess()
     {
@@ -60,8 +60,8 @@ class ClientTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Ingresse\Accountkit\Client
-     * @expectedException Ingresse\Accountkit\Exception\VerifyException
+     * @covers Unisharp\Accountkit\Client
+     * @expectedException Unisharp\Accountkit\Exception\VerifyException
      * @expectedExceptionMessage Accountkit Validation Unsuccessful
      */
     public function testValidateThrowsExceptionForResponseWithWrongStatusCode()
@@ -77,8 +77,8 @@ class ClientTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Ingresse\Accountkit\Client
-     * @expectedException Ingresse\Accountkit\Exception\RequestException
+     * @covers Unisharp\Accountkit\Client
+     * @expectedException Unisharp\Accountkit\Exception\RequestException
      * @expectedExceptionMessage Request was not done properly
      */
     public function testValidateThrowsExceptionForConnectionError()
@@ -94,8 +94,8 @@ class ClientTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Ingresse\Accountkit\Client
-     * @expectedException Ingresse\Accountkit\Exception\UnexpectedException
+     * @covers Unisharp\Accountkit\Client
+     * @expectedException Unisharp\Accountkit\Exception\UnexpectedException
      * @expectedExceptionMessage Unexpected Error into Accountkit Request
      */
     public function testValidateThrowsExceptionForUnexpectedError()
@@ -106,8 +106,8 @@ class ClientTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Ingresse\Accountkit\Client
-     * @expectedException Ingresse\Accountkit\Exception\ResponseFormatException
+     * @covers Unisharp\Accountkit\Client
+     * @expectedException Unisharp\Accountkit\Exception\ResponseFormatException
      * @expectedExceptionMessage Unexpected Response Format
      */
     public function testValidateThrowsExceptionForResponseContentType()
@@ -118,8 +118,8 @@ class ClientTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Ingresse\Accountkit\Client
-     * @expectedException Ingresse\Accountkit\Exception\ResponseFieldException
+     * @covers Unisharp\Accountkit\Client
+     * @expectedException Unisharp\Accountkit\Exception\ResponseFieldException
      * @expectedExceptionMessage Response Field Not Found - access_token
      */
     public function testValidateThrowsExceptionForTokenResponseBody()
@@ -135,8 +135,8 @@ class ClientTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @covers Ingresse\Accountkit\Client
-     * @expectedException Ingresse\Accountkit\Exception\ResponseFieldException
+     * @covers Unisharp\Accountkit\Client
+     * @expectedException Unisharp\Accountkit\Exception\ResponseFieldException
      * @expectedExceptionMessage Response Field Not Found - phone
      */
     public function testValidateThrowsExceptionForUserResponseBody()

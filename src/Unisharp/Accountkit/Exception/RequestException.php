@@ -1,6 +1,6 @@
 <?php
 
-namespace Ingresse\Accountkit\Exception;
+namespace Unisharp\Accountkit\Exception;
 
 use RuntimeException;
 use Exception;

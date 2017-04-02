@@ -1,8 +1,8 @@
 {
-    "name": "ingresse/facebook-accountkit-php",
+    "name": "unisharp/facebook-accountkit-php",
     "description": "Facebook Account Kit PHP SDK",
     "keywords": ["facebook", "accountkit"],
-    "homepage": "http://github.com/ingresse/facebook-accountkit-php",
+    "homepage": "https://github.com/UniSharp/facebook-accountkit-php",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -16,6 +16,11 @@
             "name": "Fernando Dias",
             "email": "fernando.dias@ingresse.com",
             "role": "Developer"
+        },
+        {
+            "name": "UniSharp",
+            "email": "admin@unisharp.com",
+            "role": "Company"
         }
     ],
     "require": {

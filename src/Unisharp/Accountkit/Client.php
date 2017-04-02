@@ -1,16 +1,16 @@
 <?php
 
-namespace Ingresse\Accountkit;
+namespace Unisharp\Accountkit;
 
-use Ingresse\Accountkit\Config;
+use Unisharp\Accountkit\Config;
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ClientException as GuzzleClientException;
 use GuzzleHttp\Exception\ServerException as GuzzleServerException;
-use Ingresse\Accountkit\Exception\VerifyException;
-use Ingresse\Accountkit\Exception\RequestException;
-use Ingresse\Accountkit\Exception\ResponseFormatException;
-use Ingresse\Accountkit\Exception\ResponseFieldException;
-use Ingresse\Accountkit\Exception\UnexpectedException;
+use Unisharp\Accountkit\Exception\VerifyException;
+use Unisharp\Accountkit\Exception\RequestException;
+use Unisharp\Accountkit\Exception\ResponseFormatException;
+use Unisharp\Accountkit\Exception\ResponseFieldException;
+use Unisharp\Accountkit\Exception\UnexpectedException;
 use Exception;
 
 class Client
@@ -27,6 +27,10 @@ class Client
      * @var string
      */
     private $userPhone;
+    /**
+     * @var string
+     */
+    private $userEmail;
 
     public function __construct(Config $config)
     {
@@ -100,11 +104,8 @@ class Client
 
         $userResponse = $this->convertResponse($response);
 
-        if (!isset($userResponse['phone']['number'])) {
-            throw new ResponseFieldException('phone number');
-        }
-
         $this->userPhone = $userResponse['phone'];
+        $this->userEmail = $userResponse['email'];
     }
 
     private function call($url, $params)
@@ -157,6 +158,14 @@ class Client
     public function getFullPhonenumber()
     {
         return $this->userPhone['number'];
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->userEmail['address'];
     }
 
     /**
