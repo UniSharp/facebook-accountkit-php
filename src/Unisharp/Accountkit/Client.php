@@ -104,8 +104,11 @@ class Client
 
         $userResponse = $this->convertResponse($response);
 
-        $this->userPhone = $userResponse['phone'];
-        $this->userEmail = $userResponse['email'];
+        if ($userResponse['phone']) {
+            $this->userPhone = $userResponse['phone'];
+        } elseif ($userResponse['email']) {
+            $this->userEmail = $userResponse['email'];
+        }
     }
 
     private function call($url, $params)
