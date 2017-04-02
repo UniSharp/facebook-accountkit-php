@@ -6,8 +6,8 @@ use OutOfBoundsException;
 
 class Config
 {
-    const ACCES_TOKEN_URL = 'https://graph.accountkit.com/v1.0/access_token';
-    const USER_URL        = 'https://graph.accountkit.com/v1.0/me';
+    const ACCES_TOKEN_URL = 'https://graph.accountkit.com/v1.1/access_token';
+    const USER_URL        = 'https://graph.accountkit.com/v1.1/me';
 
     /**
      * @var string
