@@ -104,9 +104,9 @@ class Client
 
         $userResponse = $this->convertResponse($response);
 
-        if ($userResponse['phone']) {
+        if (isset($userResponse['phone'])) {
             $this->userPhone = $userResponse['phone'];
-        } elseif ($userResponse['email']) {
+        } elseif (isset($userResponse['email'])) {
             $this->userEmail = $userResponse['email'];
         }
     }
